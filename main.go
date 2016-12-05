@@ -20,7 +20,8 @@ type Response struct {
 	Timestamp string `json:"timestamp"`
 }
 
-// TODO
+// HomeRoute is the home/base route of the API and returns a simple JSON
+// response.
 func HomeRoute(rw http.ResponseWriter, r *http.Request) {
 	resp := &Response{Msg: "Hello, world", Timestamp: time.Now().Format(time.RFC822)}
 	body, _ := json.MarshalIndent(resp, "", "    ")

@@ -1,0 +1,30 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hello-world
+  labels:
+    app: location
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: location
+        role: api
+        tier: backend
+        language: golang
+    spec:
+      containers:
+      - name: hello-world
+        image: gcr.io/kubernetes-codelab-143900/hello-world:0.0.2
+        imagePullPolicy: IfNotPresent
+        resources:
+          requests:
+            cpu: 400m
+            memory: 500M
+          limits:
+            cpu: 800m
+            memory: 1G
+        ports:
+          - containerPort: 8080
+            name: hello-world

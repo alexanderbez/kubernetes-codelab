@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: hello-world
   labels:
-    app: location
+    app: kubernetes-codelab
     role: api
     tier: backend
     language: golang
@@ -18,7 +18,7 @@ spec:
       port: 443
       targetPort: 8080
   selector:
-    app: location
+    app: kubernetes-codelab
     role: api
     tier: backend
     language: golang

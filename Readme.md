@@ -19,6 +19,6 @@ $ make build <push>
 Once the initial image is pushed to GCR, you can update the image via a deploy:
 
 ```
-# Bump version
+# Bump version (TAG)
 $ make deploy
 ```

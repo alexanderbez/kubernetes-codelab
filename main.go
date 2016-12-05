@@ -18,12 +18,17 @@ import (
 type Response struct {
 	Msg       string `json:"msg"`
 	Timestamp string `json:"timestamp"`
+	Secret    string `json:"secret"`
 }
 
 // HomeRoute is the home/base route of the API and returns a simple JSON
 // response.
 func HomeRoute(rw http.ResponseWriter, r *http.Request) {
-	resp := &Response{Msg: "Hello, world", Timestamp: time.Now().Format(time.RFC822)}
+	resp := &Response{
+		Msg:       "Hello, world",
+		Timestamp: time.Now().Format(time.RFC822),
+		Secret:    os.Getenv("MY_SECRET"),
+	}
 	body, _ := json.MarshalIndent(resp, "", "    ")
 
 	rw.Header().Set("Content-Type", "application/json")

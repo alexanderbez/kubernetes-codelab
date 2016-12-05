@@ -2,6 +2,8 @@
 
 A simple dummy API written in Golang, deployed to GKE and managed by Kubernetes.
 
+__Note__: `kubernetes_codelab/kubernetes/app.secret.yaml` should not be committed to source control -- it's simply added for demonstration purposes.
+
 ## Usage
 
 ```go

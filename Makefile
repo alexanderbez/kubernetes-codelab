@@ -2,7 +2,7 @@
 
 GCR_URI=gcr.io/kubernetes-codelab-143900
 IMAGE=hello-world
-TAG?=0.0.2
+TAG?=0.0.3
 GOARCH?=amd64
 GOOS?=linux
 
